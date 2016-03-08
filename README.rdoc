@@ -1,5 +1,15 @@
 == README
 
+==This is a server configuration that serves as RESTful API for front end application.
+CRUD functionality of API has been tested through "test" folder.
+
+customers information can be used at "/api/customers", which will use customers controller
+
+*Database being used is postgresql
+
+
+==Information below is for markup reference for myself for later usage.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
