@@ -19,8 +19,24 @@ module Api
     def create
       customer = Customer.new(customer_params)
       if customer.save
-        render json: customer, status: 201, :location => api_customer_path(customer)
+        head 204, :location => api_customer_path(customer)
       end
+    end
+
+    def update
+      customer = Customer.find(params[:id])
+      if customer.update(customer_params)
+        render json: customer, status: 200
+      else
+        render json: customer.errors, status: 422
+      end
+
+    end
+
+    def destroy
+      customer = Customer.find(params[:id])
+      customer.destroy
+      head 204
     end
 
 
